@@ -41,15 +41,28 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
     });
   }, [activeChat, chats, currentChat]);
 
-  const scrollToBottom = () => {
-    setTimeout(() => {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
-  };
+const scrollToBottom = () => {
+  const container = messagesEndRef.current?.parentElement;
+  if (!container) return;
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [currentChat?.messages, isTyping]);
+  const isNearBottom =
+    container.scrollHeight - container.scrollTop - container.clientHeight < 100;
+
+  if (isNearBottom) {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const hasMounted = useRef(false);
+
+useEffect(() => {
+  if (!hasMounted.current) {
+    hasMounted.current = true;
+    return;
+  }
+
+  scrollToBottom();
+}, [currentChat?.messages, isTyping]);
 
   const buildDocumentContext = (): string => {
     const selected = documents.filter(
