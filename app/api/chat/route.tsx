@@ -2,11 +2,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const API_CONFIGS = [
-  { key: process.env.Model_1, model: "openai/gpt-4o" },
-  { key: process.env.Model_2, model: "openai/gpt-4o" },
-  { key: process.env.Model_3, model: "openai/gpt-4o" },
-  { key: process.env.Model_4, model: "openai/gpt-4o" },
+  { key: process.env.MODEL_1, model: "openai/gpt-4o" },
+  { key: process.env.MODEL_2, model: "openai/gpt-4o" },
+  { key: process.env.MODEL_3, model: "openai/gpt-4o" },
+  { key: process.env.MODEL_4, model: "openai/gpt-4o" },
 ];
+ 
 
 const FALLBACK_STATUS_CODES = new Set([429, 402, 503, 401, 403]);
 const FALLBACK_ERROR_SNIPPETS = [
