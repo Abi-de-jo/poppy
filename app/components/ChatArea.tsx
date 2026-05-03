@@ -29,7 +29,7 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const currentChat = chats.find((c) => c.id === activeChat);
-  
+
   // Debug logging
   useEffect(() => {
     console.log("ChatArea Debug:", {
@@ -76,7 +76,7 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
 
     console.log("Sending message:", question);
     setError(null);
-    
+
     // Create a new chat if none exists
     let chat = currentChat;
     if (!chat) {
@@ -125,7 +125,7 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
 
       console.log("Calling API...");
       const response = await callChatAPI(systemPrompt, historyMessages);
-      
+
       console.log("API Response received:", response);
 
       const docsUsed = documents
@@ -161,14 +161,14 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
 
   return (
     <>
-      <div className="flex-1 overflow-y-hidden">
+      <div className="flex-1 overflow-y-auto no-scrollbar">
         <div className="min-h-full">
           {showWelcome ? (
             <WelcomeScreen onSendMessage={sendMessage} />
           ) : (
             <>
               <MessageList messages={currentChat?.messages || []} />
-              
+
               {isTyping && (
                 <div className="max-w-3xl mx-auto px-4 py-2">
                   <div className="flex gap-3">
@@ -187,7 +187,7 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
                   </div>
                 </div>
               )}
-              
+
               {error && (
                 <div className="max-w-3xl mx-auto px-4 py-2">
                   <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-red-400 text-sm">
@@ -196,13 +196,13 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
                   </div>
                 </div>
               )}
-              
+
               <div ref={messagesEndRef} />
             </>
           )}
         </div>
       </div>
-      
+
       <InputArea onSendMessage={sendMessage} onOpenDocs={onOpenDocs} />
     </>
   );
