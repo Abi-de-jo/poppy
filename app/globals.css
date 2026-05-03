@@ -1,0 +1,111 @@
+/* app/globals.css */
+@import 'tailwindcss';
+
+/* Tailwind CSS v4 theme configuration */
+@theme {
+  /* Custom colors */
+  --color-bg-primary: #0b0f14;
+  --color-bg-secondary: #111620;
+  --color-bg-tertiary: #161d2a;
+  --color-bg-elevated: #1e2738;
+  --color-bg-overlay: #243044;
+  --color-bg-card: #131926;
+  
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-tertiary: #546880;
+  --color-text-link: #60a5fa;
+  
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-accent-subtle: rgba(59, 130, 246, 0.12);
+  
+  --color-indigo: #60a5fa;
+  --color-violet: #818cf8;
+  --color-emerald: #34d399;
+  --color-sky: #38bdf8;
+  --color-rose: #fb7185;
+  --color-amber: #fbbf24;
+  
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  
+  /* Shadows */
+  --shadow-glow: 0 0 24px rgba(59, 130, 246, 0.15);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  
+  /* Font families */
+  --font-display: 'Syne', var(--font-syne);
+  --font-body: 'DM Sans', var(--font-dm-sans);
+  
+  /* Animations */
+  --animate-slide-up: slideUp 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-bounce: bounce 1.4s ease-in-out infinite;
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+/* Custom utilities */
+@utility scrollbar-thin {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #1e2738;
+    border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #243044;
+  }
+}
+
+/* Base styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    overflow: hidden;
+    font-family: var(--font-body);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+}
