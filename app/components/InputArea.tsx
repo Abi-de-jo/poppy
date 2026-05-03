@@ -109,7 +109,7 @@ export default function InputArea({ onSendMessage, onOpenDocs }: InputAreaProps)
         {/* Footer hint */}
         <div className="flex items-center justify-center gap-2 mt-3 text-xs text-[#546880]">
           <i className="fa-solid fa-shield-halved text-[#34d399] text-xs"></i>
-          <span>Answers grounded in your uploaded documents · Powered by GPT-4.5 via OpenRouter</span>
+          <span>Answers grounded in your uploaded documents · Powered by LLM's</span>
         </div>
       </div>
     </div>
