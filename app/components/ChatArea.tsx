@@ -18,7 +18,7 @@ export default function ChatArea({ onOpenDocs }: ChatAreaProps) {
     chats,
     activeChat,
     addChat,
-    updateChat,
+    updateChat, 
     documents,
     selectedDocuments,
     getDocStore,

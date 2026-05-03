@@ -331,7 +331,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                           </div>
                           <button
                             onClick={(e) => handleDeleteChat(chat.id, e)}
-                            className="w-[22px] h-[22px] bg-transparent border-none rounded-[5px] text-[#546880] cursor-pointer flex items-center justify-center transition-all duration-150 text-[11px] hover:bg-[#243044] hover:text-[#fb7185] opacity-0 group-hover:opacity-100"
+                            className="w-[22px] h-[22px] bg-transparent border-none rounded-[5px] text-[#546880] cursor-pointer flex items-center justify-center transition-all duration-150 text-[11px] hover:bg-[#243044] hover:text-[#fb7185]"
                           >
                             <i className="fa-solid fa-xmark"></i>
                           </button>

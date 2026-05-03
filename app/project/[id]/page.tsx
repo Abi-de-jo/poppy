@@ -51,10 +51,17 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="app-container">
+    <div className="flex h-screen overflow-hidden bg-[#0b0f14]">
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-      <div className="sidebar-overlay" onClick={closeSidebar}></div>
-      <main className="main-area">
+
+      {isSidebarOpen && isMobile && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-20"
+          onClick={closeSidebar}
+        />
+      )}
+
+      <main className="flex-1 flex flex-col min-w-0 relative z-10">
         <Topbar onMenuClick={toggleSidebar} />
         <ChatArea onOpenDocs={closeSidebar} />
       </main>
