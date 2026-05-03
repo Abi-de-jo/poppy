@@ -16,7 +16,7 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
     : null;
 
   return (
-    <div className="h-[58px] bg-[#111620] border-b border-[rgba(148,163,184,0.07)] px-[22px] flex items-center gap-3 flex-shrink-0 max-[900px]:px-3 max-[900px]:gap-2">
+    <div className="h-[58px] fixed top-0 left-0 right-0 bg-[#111620] border-b border-[rgba(148,163,184,0.07)] px-[22px] flex items-center gap-3 flex-shrink-0 max-[900px]:px-3 max-[900px]:gap-2">
       <button 
         className="lg:hidden w-8 h-8 bg-transparent border border-[rgba(208, 65, 17, 0.07)] rounded-[10px] text-[#94a3b8] cursor-pointer flex items-center justify-center transition-all duration-150 hover:bg-[#161d2a] hover:border-[rgba(148,163,184,0.12)] hover:text-[#e2e8f0] max-[900px]:w-[30px] max-[900px]:h-[30px]"
         title="Menu" 
